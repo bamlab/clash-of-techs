@@ -1,0 +1,12 @@
+{
+  "name": "feed-builder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/lodash": "^4.14.181",
+    "@types/node-fetch": "^2.6.1",
+    "lodash": "^4.17.21",
+    "node-fetch": "2"
+  }
+}
