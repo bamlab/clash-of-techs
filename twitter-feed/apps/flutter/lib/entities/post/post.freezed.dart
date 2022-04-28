@@ -24,7 +24,7 @@ mixin _$Post {
   String get text => throw _privateConstructorUsedError;
   @JsonKey(name: 'createdAt')
   DateTime get createdAt => throw _privateConstructorUsedError;
-  Image get image => throw _privateConstructorUsedError;
+  Image? get image => throw _privateConstructorUsedError;
   Author get author => throw _privateConstructorUsedError;
   PublicMetrics get publicMetrics => throw _privateConstructorUsedError;
 
@@ -41,11 +41,11 @@ abstract class $PostCopyWith<$Res> {
       {String id,
       String text,
       @JsonKey(name: 'createdAt') DateTime createdAt,
-      Image image,
+      Image? image,
       Author author,
       PublicMetrics publicMetrics});
 
-  $ImageCopyWith<$Res> get image;
+  $ImageCopyWith<$Res>? get image;
   $AuthorCopyWith<$Res> get author;
   $PublicMetricsCopyWith<$Res> get publicMetrics;
 }
@@ -83,7 +83,7 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as Image,
+              as Image?,
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
@@ -96,8 +96,12 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
   }
 
   @override
-  $ImageCopyWith<$Res> get image {
-    return $ImageCopyWith<$Res>(_value.image, (value) {
+  $ImageCopyWith<$Res>? get image {
+    if (_value.image == null) {
+      return null;
+    }
+
+    return $ImageCopyWith<$Res>(_value.image!, (value) {
       return _then(_value.copyWith(image: value));
     });
   }
@@ -126,12 +130,12 @@ abstract class _$PostCopyWith<$Res> implements $PostCopyWith<$Res> {
       {String id,
       String text,
       @JsonKey(name: 'createdAt') DateTime createdAt,
-      Image image,
+      Image? image,
       Author author,
       PublicMetrics publicMetrics});
 
   @override
-  $ImageCopyWith<$Res> get image;
+  $ImageCopyWith<$Res>? get image;
   @override
   $AuthorCopyWith<$Res> get author;
   @override
@@ -172,7 +176,7 @@ class __$PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as Image,
+              as Image?,
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
@@ -206,7 +210,7 @@ class _$_Post implements _Post {
   @JsonKey(name: 'createdAt')
   final DateTime createdAt;
   @override
-  final Image image;
+  final Image? image;
   @override
   final Author author;
   @override
@@ -258,7 +262,7 @@ abstract class _Post implements Post {
       {required final String id,
       required final String text,
       @JsonKey(name: 'createdAt') required final DateTime createdAt,
-      required final Image image,
+      required final Image? image,
       required final Author author,
       required final PublicMetrics publicMetrics}) = _$_Post;
 
@@ -272,7 +276,7 @@ abstract class _Post implements Post {
   @JsonKey(name: 'createdAt')
   DateTime get createdAt => throw _privateConstructorUsedError;
   @override
-  Image get image => throw _privateConstructorUsedError;
+  Image? get image => throw _privateConstructorUsedError;
   @override
   Author get author => throw _privateConstructorUsedError;
   @override

@@ -12,7 +12,7 @@ class Post with _$Post {
     required String id,
     required String text,
     @JsonKey(name: 'createdAt') required DateTime createdAt,
-    required Image image,
+    required Image? image,
     required Author author,
     required PublicMetrics publicMetrics,
   }) = _Post;
