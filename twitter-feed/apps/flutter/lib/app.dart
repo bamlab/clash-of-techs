@@ -1,5 +1,6 @@
 import 'package:clash_of_techs_twitter_feed/data/feed_json_data_source.dart';
 import 'package:clash_of_techs_twitter_feed/domain/entities/feed/feed.dart';
+import 'package:clash_of_techs_twitter_feed/presentation/widgets/feed_view.dart';
 import 'package:flutter/material.dart';
 
 class ClashOfTechsApp extends StatelessWidget {
@@ -18,14 +19,7 @@ class ClashOfTechsApp extends StatelessWidget {
               } else if (snapshot.hasError) {
                 return Text('${snapshot.error}');
               }
-              final feed = snapshot.data as Feed;
-              return ListView.separated(
-                itemCount: feed.posts.length,
-                separatorBuilder: (context, index) => const Divider(),
-                itemBuilder: (context, index) => ListTile(
-                  title: Text(feed.posts[index].text),
-                ),
-              );
+              return FeedView(feed: snapshot.data as Feed);
             }),
       ),
     );
