@@ -3,6 +3,7 @@ import 'package:clash_of_techs_twitter_feed/domain/entities/public_metrics/publi
 import 'package:clash_of_techs_twitter_feed/presentation/widgets/avatar.dart';
 import 'package:clash_of_techs_twitter_feed/presentation/widgets/public_metric_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class PostHeader extends StatelessWidget {
   final Post post;
@@ -21,9 +22,12 @@ class PostHeader extends StatelessWidget {
         ),
         Text(
           '@${post.author.username}',
-          style: const TextStyle(
-            fontWeight: FontWeight.normal,
-          ),
+          style: TextStyle(color: Colors.grey.shade600),
+        ),
+        Text(' · ', style: TextStyle(color: Colors.grey.shade600)),
+        Text(
+          DateFormat.MMMd().format(post.createdAt),
+          style: TextStyle(color: Colors.grey.shade600),
         ),
       ],
     );
