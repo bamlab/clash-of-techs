@@ -28,6 +28,16 @@ class PostHeader extends StatelessWidget {
   }
 }
 
+class PostBody extends StatelessWidget {
+  final Post post;
+  const PostBody({Key? key, required this.post}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(post.text);
+  }
+}
+
 class PostTile extends StatelessWidget {
   final Post post;
   const PostTile({Key? key, required this.post}) : super(key: key);
@@ -38,7 +48,7 @@ class PostTile extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.only(right: 10, left: 10),
           child: Avatar(imageUrl: post.author.profileImageUrl),
         ),
         Expanded(
@@ -46,7 +56,10 @@ class PostTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             PostHeader(post: post),
-            Text(post.text),
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: PostBody(post: post),
+            ),
           ],
         )),
       ],
