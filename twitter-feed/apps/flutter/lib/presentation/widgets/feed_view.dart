@@ -11,9 +11,7 @@ class FeedView extends StatelessWidget {
     return ListView.separated(
       itemCount: feed.posts.length,
       separatorBuilder: (context, index) => const Divider(),
-      itemBuilder: (context, index) => ListTile(
-        title: PostTile(post: feed.posts[index]),
-      ),
+      itemBuilder: (context, index) => PostTile(post: feed.posts[index]),
     );
   }
 }
