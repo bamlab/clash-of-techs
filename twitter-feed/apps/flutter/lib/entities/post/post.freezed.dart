@@ -22,6 +22,7 @@ Post _$PostFromJson(Map<String, dynamic> json) {
 mixin _$Post {
   String get id => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
+  @JsonKey(name: 'createdAt')
   DateTime get createdAt => throw _privateConstructorUsedError;
   Image get image => throw _privateConstructorUsedError;
   Author get author => throw _privateConstructorUsedError;
@@ -39,7 +40,7 @@ abstract class $PostCopyWith<$Res> {
   $Res call(
       {String id,
       String text,
-      DateTime createdAt,
+      @JsonKey(name: 'createdAt') DateTime createdAt,
       Image image,
       Author author,
       PublicMetrics publicMetrics});
@@ -124,7 +125,7 @@ abstract class _$PostCopyWith<$Res> implements $PostCopyWith<$Res> {
   $Res call(
       {String id,
       String text,
-      DateTime createdAt,
+      @JsonKey(name: 'createdAt') DateTime createdAt,
       Image image,
       Author author,
       PublicMetrics publicMetrics});
@@ -190,7 +191,7 @@ class _$_Post implements _Post {
   const _$_Post(
       {required this.id,
       required this.text,
-      required this.createdAt,
+      @JsonKey(name: 'createdAt') required this.createdAt,
       required this.image,
       required this.author,
       required this.publicMetrics});
@@ -202,6 +203,7 @@ class _$_Post implements _Post {
   @override
   final String text;
   @override
+  @JsonKey(name: 'createdAt')
   final DateTime createdAt;
   @override
   final Image image;
@@ -255,7 +257,7 @@ abstract class _Post implements Post {
   const factory _Post(
       {required final String id,
       required final String text,
-      required final DateTime createdAt,
+      @JsonKey(name: 'createdAt') required final DateTime createdAt,
       required final Image image,
       required final Author author,
       required final PublicMetrics publicMetrics}) = _$_Post;
@@ -267,6 +269,7 @@ abstract class _Post implements Post {
   @override
   String get text => throw _privateConstructorUsedError;
   @override
+  @JsonKey(name: 'createdAt')
   DateTime get createdAt => throw _privateConstructorUsedError;
   @override
   Image get image => throw _privateConstructorUsedError;

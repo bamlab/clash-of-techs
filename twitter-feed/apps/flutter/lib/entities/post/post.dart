@@ -11,7 +11,7 @@ class Post with _$Post {
   const factory Post({
     required String id,
     required String text,
-    required DateTime createdAt,
+    @JsonKey(name: 'createdAt') required DateTime createdAt,
     required Image image,
     required Author author,
     required PublicMetrics publicMetrics,

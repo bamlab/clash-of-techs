@@ -9,7 +9,7 @@ part of 'image.dart';
 _$_Image _$$_ImageFromJson(Map<String, dynamic> json) => _$_Image(
       url: json['url'] as String,
       type: json['type'] as String,
-      mediaKey: json['mediaKey'] as String,
+      mediaKey: json['media_key'] as String,
       width: json['width'] as int,
       height: json['height'] as int,
     );
@@ -17,7 +17,7 @@ _$_Image _$$_ImageFromJson(Map<String, dynamic> json) => _$_Image(
 Map<String, dynamic> _$$_ImageToJson(_$_Image instance) => <String, dynamic>{
       'url': instance.url,
       'type': instance.type,
-      'mediaKey': instance.mediaKey,
+      'media_key': instance.mediaKey,
       'width': instance.width,
       'height': instance.height,
     };
