@@ -3,6 +3,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'public_metrics.freezed.dart';
 part 'public_metrics.g.dart';
 
+enum PublicMetricType {
+  like,
+  retweet,
+  reply,
+  quote,
+}
+
 @freezed
 class PublicMetrics with _$PublicMetrics {
   const factory PublicMetrics({
