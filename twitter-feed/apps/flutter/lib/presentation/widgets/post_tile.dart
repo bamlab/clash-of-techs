@@ -40,7 +40,21 @@ class PostBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(post.text);
+    return Column(
+      children: [
+        Text(post.text),
+        if (post.image != null && post.image!.url != null) ...[
+          const SizedBox(height: 10),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Image.network(
+              post.image!.url!,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ]
+      ],
+    );
   }
 }
 
