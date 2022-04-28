@@ -1,6 +1,6 @@
-import 'package:clash_of_techs_twitter_feed/entities/author/author.dart';
-import 'package:clash_of_techs_twitter_feed/entities/image/image.dart';
-import 'package:clash_of_techs_twitter_feed/entities/public_metrics/public_metrics.dart';
+import 'package:clash_of_techs_twitter_feed/domain/entities/author/author.dart';
+import 'package:clash_of_techs_twitter_feed/domain/entities/image/image.dart';
+import 'package:clash_of_techs_twitter_feed/domain/entities/public_metrics/public_metrics.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'post.freezed.dart';

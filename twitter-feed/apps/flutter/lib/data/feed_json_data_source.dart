@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:clash_of_techs_twitter_feed/entities/feed/feed.dart';
-import 'package:clash_of_techs_twitter_feed/entities/post/post.dart';
+import 'package:clash_of_techs_twitter_feed/domain/entities/feed/feed.dart';
+import 'package:clash_of_techs_twitter_feed/domain/entities/post/post.dart';
 import 'package:flutter/services.dart' as root_bundle;
 
 class FeedJsonDataSource {

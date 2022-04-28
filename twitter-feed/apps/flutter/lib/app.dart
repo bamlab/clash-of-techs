@@ -1,5 +1,5 @@
 import 'package:clash_of_techs_twitter_feed/data/feed_json_data_source.dart';
-import 'package:clash_of_techs_twitter_feed/entities/feed/feed.dart';
+import 'package:clash_of_techs_twitter_feed/domain/entities/feed/feed.dart';
 import 'package:flutter/material.dart';
 
 class ClashOfTechsApp extends StatelessWidget {
