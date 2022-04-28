@@ -7,7 +7,7 @@ part of 'image.dart';
 // **************************************************************************
 
 _$_Image _$$_ImageFromJson(Map<String, dynamic> json) => _$_Image(
-      url: json['url'] as String,
+      url: json['url'] as String?,
       type: json['type'] as String,
       mediaKey: json['media_key'] as String,
       width: json['width'] as int,

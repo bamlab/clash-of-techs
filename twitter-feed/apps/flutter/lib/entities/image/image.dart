@@ -6,7 +6,7 @@ part 'image.g.dart';
 @freezed
 class Image with _$Image {
   const factory Image({
-    required String url,
+    required String? url,
     required String type,
     required String mediaKey,
     required int width,

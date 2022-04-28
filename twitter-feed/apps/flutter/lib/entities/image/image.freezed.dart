@@ -20,7 +20,7 @@ Image _$ImageFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Image {
-  String get url => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
   String get mediaKey => throw _privateConstructorUsedError;
   int get width => throw _privateConstructorUsedError;
@@ -35,7 +35,7 @@ mixin _$Image {
 abstract class $ImageCopyWith<$Res> {
   factory $ImageCopyWith(Image value, $Res Function(Image) then) =
       _$ImageCopyWithImpl<$Res>;
-  $Res call({String url, String type, String mediaKey, int width, int height});
+  $Res call({String? url, String type, String mediaKey, int width, int height});
 }
 
 /// @nodoc
@@ -58,7 +58,7 @@ class _$ImageCopyWithImpl<$Res> implements $ImageCopyWith<$Res> {
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -84,7 +84,7 @@ abstract class _$ImageCopyWith<$Res> implements $ImageCopyWith<$Res> {
   factory _$ImageCopyWith(_Image value, $Res Function(_Image) then) =
       __$ImageCopyWithImpl<$Res>;
   @override
-  $Res call({String url, String type, String mediaKey, int width, int height});
+  $Res call({String? url, String type, String mediaKey, int width, int height});
 }
 
 /// @nodoc
@@ -108,7 +108,7 @@ class __$ImageCopyWithImpl<$Res> extends _$ImageCopyWithImpl<$Res>
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -143,7 +143,7 @@ class _$_Image implements _Image {
       _$$_ImageFromJson(json);
 
   @override
-  final String url;
+  final String? url;
   @override
   final String type;
   @override
@@ -193,7 +193,7 @@ class _$_Image implements _Image {
 
 abstract class _Image implements Image {
   const factory _Image(
-      {required final String url,
+      {required final String? url,
       required final String type,
       required final String mediaKey,
       required final int width,
@@ -202,7 +202,7 @@ abstract class _Image implements Image {
   factory _Image.fromJson(Map<String, dynamic> json) = _$_Image.fromJson;
 
   @override
-  String get url => throw _privateConstructorUsedError;
+  String? get url => throw _privateConstructorUsedError;
   @override
   String get type => throw _privateConstructorUsedError;
   @override
