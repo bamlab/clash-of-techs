@@ -11,7 +11,7 @@ class PostHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Wrap(
       children: [
         Padding(
           padding: const EdgeInsets.only(right: 3.0),
