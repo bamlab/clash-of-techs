@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/avatar_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:shapeAppearanceOverlay="@style/circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/avatar_image"
+        app:layout_constraintTop_toTopOf="@+id/avatar_image"
+        tools:text="User Name" />
+
+    <TextView
+        android:id="@+id/twitter_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/name"
+        app:layout_constraintTop_toTopOf="@+id/name"
+        tools:text="\@UserId" />
+
+    <TextView
+        android:id="@+id/name_separator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="·"
+        app:layout_constraintStart_toEndOf="@+id/twitter_id"
+        app:layout_constraintTop_toTopOf="@+id/twitter_id" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        app:layout_constraintStart_toEndOf="@+id/name_separator"
+        app:layout_constraintTop_toTopOf="@+id/twitter_id"
+        tools:text="03 Mar" />
+
+    <TextView
+        android:id="@+id/tweet_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/avatar_image"
+        app:layout_constraintTop_toBottomOf="@+id/twitter_id"
+        tools:text="Typical tweet text" />
+
+    <ImageView
+        android:id="@+id/tweet_image"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@id/answers_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/avatar_image"
+        app:layout_constraintTop_toBottomOf="@id/tweet_text"
+        tools:layout_height="200dp"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/answers_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/retweet_layout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@id/tweet_image"
+        app:layout_constraintTop_toBottomOf="@id/tweet_image">
+
+        <ImageView
+            android:id="@+id/answers_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/outline_chat_bubble_outline_24" />
+
+        <TextView
+            android:id="@+id/answers_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:chainUseRtl="false"
+            tools:text="12" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/retweet_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="32dp"
+        app:layout_constraintEnd_toStartOf="@+id/like_layout"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/answers_layout"
+        app:layout_constraintTop_toBottomOf="@id/tweet_image">
+
+        <ImageView
+            android:id="@+id/retweet_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/outline_autorenew_24" />
+
+        <TextView
+            android:id="@+id/retweet_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="7" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/like_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/share_image"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/retweet_layout"
+        app:layout_constraintTop_toBottomOf="@id/tweet_image">
+
+        <ImageView
+            android:id="@+id/like_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/outline_favorite_border_24" />
+
+        <TextView
+            android:id="@+id/like_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            tools:text="7" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <ImageView
+        android:id="@+id/share_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/like_layout"
+        app:layout_constraintTop_toBottomOf="@+id/tweet_image"
+        app:srcCompat="@drawable/outline_share_24" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
