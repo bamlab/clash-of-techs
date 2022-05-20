@@ -1,7 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {memo} from 'react';
 import {
-  ActivityIndicator,
   FlatList,
   Image,
   PixelRatio,
@@ -12,12 +11,8 @@ import {
 } from 'react-native';
 
 import feed from './feed.json';
-import _ from 'lodash';
 import {format} from 'date-fns';
 import Icon from 'react-native-vector-icons/EvilIcons';
-import {Tweet} from './feedBuilder';
-import {useState} from 'react';
-import {useEffect} from 'react';
 
 const Metric = ({iconName, value}: {iconName: string; value: number}) => (
   <View style={{flexDirection: 'row', flex: 1, alignItems: 'center'}}>
@@ -27,13 +22,7 @@ const Metric = ({iconName, value}: {iconName: string; value: number}) => (
 );
 
 const TweetItem = ({tweet}: {tweet: Tweet}) => {
-  const [showTweet, setShowTweet] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => setShowTweet(true), 1000);
-  }, []);
-
-  return showTweet ? (
+  return (
     <View key={tweet.id}>
       <View style={{flexDirection: 'row', paddingHorizontal: 10}}>
         <View style={{paddingRight: 10}}>
@@ -92,8 +81,6 @@ const TweetItem = ({tweet}: {tweet: Tweet}) => {
         </View>
       </View>
     </View>
-  ) : (
-    <ActivityIndicator />
   );
 };
 
