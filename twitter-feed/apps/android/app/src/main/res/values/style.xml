@@ -2,4 +2,8 @@
     <style name="circle">
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="round_corner">
+        <item name="cornerSize">16dp</item>
+    </style>
 </resources>
